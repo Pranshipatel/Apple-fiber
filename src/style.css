@@ -1,0 +1,47 @@
+html,body{
+    width: 100%;
+    height: 100%;
+}
+#root{
+    width: 100%;
+    height: 100%;
+    background: #000;
+}
+
+
+  
+  .glass-text {
+    background: linear-gradient(135deg, rgba(0, 128, 255, 0.5), rgba(242, 47, 144, 0.5)); /* Blue and pink gradient */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 5px;
+    border-radius: 5px;
+    backdrop-filter: blur(5px);
+    position: relative; /* Required for the glow effect */
+    filter: drop-shadow(0 0 5px rgba(101, 160, 219, 0.7)) drop-shadow(0 0 10px rgba(185, 66, 126, 0.7)); /* Glow effect */
+  }
+  
+  .glow::before {
+    content: '';
+    position: absolute;
+    top: -20%;
+    left: 0;
+    right: 0;
+    height: 120%;
+    background: rgba(101, 193, 193, 0.3); /* Light blue color */
+    opacity: 0.6;
+    border-radius: 50%;
+    transform: skew(-20deg);
+    pointer-events: none; /* Prevent interaction */
+    animation: shine 1.5s infinite; /* Add shine animation */
+  }
+  
+  @keyframes shine {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+    
